@@ -1,0 +1,117 @@
+.icon{background:url(images/img.png)  no-repeat; width: 21px; height: 21px; display: inline-block; vertical-align: middle;}
+.icon-set{background-position:0 -63px;}
+.icon-up{background-position:0 -21px;}
+.icon-drop{background-position:0 -39px;}
+.icon-search{background-position:0 -84px;}
+.icon-print{background-position:0 -105px;}
+a:hover .icon-print{background-position:0 -378px;}
+.icon-down{background-position:0 -336px;}
+a:hover .icon-down{background-position:0 -399px;}
+.icon-colmon{background-position:0 -210px;}
+a:hover .icon-colmon{background-position:0 -420px;}
+.icon-water{background-position:0 -126px;}
+.icon-water2{background-position:0 -147px;}
+.icon-set2{background-position:0 -168px;}
+.icon-line{background-position:0 -189px;}
+.icon-delete{background-position:0 -231px;}
+a:hover .icon-delete{background-position:0 -441px;}
+.icon-delete-gray{background-position:0 -483px;}
+.icon-all{background-position:0 -252px;}
+.icon-close{background-position:0 -273px;}
+.icon-gas{background-position:0 -294px;}
+.icon-add{background-position:0 -315px;}
+.icon-edit{background-position:0 -357px;}
+a:hover .icon-edit{background-position:0 -462px;}
+.icon-relate{background-position:0 -652px;}
+a:hover .icon-relate{background-position:0 -673px;}
+.icon-relate-dis{background-position:0 -695px;}
+.icon-edit-gray{background-position:0 -504px;}
+.icon-exceed{background-position:0 -525px;}
+.icon-abnormal{background-position:0 -547px;}
+.icon-droped{background-position:0 -568px;}
+.icon-VM{background-position:0 -589px;}
+.icon-VD{background-position:0 -610px;}
+.icon-VS{background-position:0 -631px;}
+
+/*-----1------*/
+.icon-warn{background:url(images/icon-s.png) no-repeat; background-position:0 -115px;}
+.icon-remove-up{background:url(images/icon-s.png) no-repeat; background-position:0 -16px;}
+.icon-remove-down{background:url(images/icon-s.png) no-repeat; background-position:0 0;}
+.icon-delete-s{background:url(images/icon-s.png) no-repeat; background-position:0 -32px;}
+.icon-delete-s-gray{background:url(images/icon-s.png) no-repeat; background-position:0 -218px;}
+
+.icon-opt-ok{background:url(images/icon-big.png) no-repeat; background-position:0 -462px;}
+.icon-opt-fail{background:url(images/icon-big.png) no-repeat; background-position:0 -398px;}
+.icon-opt-ok-color{background:url(images/icon-big.png) no-repeat; background-position:0 -366px;}
+.icon-opt-ask-color{background:url(images/icon-big.png) no-repeat; background-position:0 -302px;}
+.icon-opt-fail-color{background:url(images/icon-big.png) no-repeat; background-position:0 -334px;}
+.icon-opt-empty{background:url(images/icon-big.png) no-repeat; background-position:0 -430px;}
+.icon-download{background:url(images/icon-s.png) no-repeat; background-position:0 -48px;}
+/*-----1------*/
+
+/*--简单查询工具栏--begin--*/
+.iconBar{background:url(images/simpleQuery-bar-icon.png)  no-repeat; width: 40px; height: 25px; display: inline-block; vertical-align: middle;}
+.iconB-water{background-position:0 0;}
+a:hover .iconB-water,a.on .iconB-water{background-position:0 -75px;}
+.iconB-gas{background-position:0 -25px;}
+a:hover .iconB-gas,a.on .iconB-gas {background-position:0 -100px;}
+.iconB-factory{background-position:0 -50px;}
+a:hover .iconB-factory,a.on .iconB-factory{background-position:0 -125px;}
+.iconB-all{background-position:0 -300px;}
+a:hover .iconB-all,a.on .iconB-all{background-position:0 -325px;}
+.iconB-whole{background-position:0 -150px;  cursor: pointer}
+.iconB-whole:hover{background-position:0 -175px;}
+.iconB-simple{background-position:0 -200px; cursor: pointer}
+.iconB-simple:hover{background-position:0 -225px;}
+.iconB-set{background-position:0 -250px;  cursor: pointer}
+.iconB-set:hover{background-position:0 -275px;}
+/*--简单查询工具栏--begin--*/
+
+/*------3-----*/
+.icon-optStatus-all{background:url(images/icon-s.png) no-repeat; background-position:0 -64px;}
+.icon-optStatus-mid{background:url(images/icon-s.png) no-repeat; background-position:0 -81px;}
+.icon-optStatus-none{background:url(images/icon-s.png) no-repeat; background-position:0 -98px;}
+.icon-curve{background:url(images/icon-big.png) no-repeat; background-position:0 -524px;}
+.icon-curve-on{background:url(images/icon-big.png) no-repeat; background-position:0 -554px;}
+.icon-grid{background:url(images/icon-big.png) no-repeat; background-position:0 -584px;}
+.icon-grid-on{background:url(images/icon-big.png) no-repeat; background-position:0 -614px;}
+.icon-forward{width:35px; height:35px; display:block;background:url(images/icon-big.png) no-repeat; background-position:0 -679px; cursor: pointer}
+.icon-forward:hover{background-position:0 -749px;}
+.icon-back{width:35px; height:35px; display:block;background:url(images/icon-big.png) no-repeat; background-position:0 -644px; cursor: pointer}
+.icon-back:hover{background-position:0 -714px;}
+.icon-location{width:22px; height:22px; display:block;background:url(images/icon-big.png) no-repeat; background-position:0 -784px; cursor: pointer}
+.icon-location:hover{background-position:0 -806px;}
+/*------3-----*/
+
+/*--污染源基本信息-视图--begin--*/
+.view-appliance{width:61px; height:61px; background:url(images/icon-equipment.png)  no-repeat; background-position: 0 -428px;}
+
+.icon-menu{background:url(images/view/menu-icon.png)  no-repeat; width: 16px; height: 16px; display: inline-block; vertical-align: middle;}
+.menu-info{background-position:0 0;}
+.menu-add-r{background-position:0 -16px;}
+.menu-add-s{background-position:0 -32px;}
+.menu-delete{background-position:0 -48px;}
+.menu-data{background-position:0 -64px;}
+.menu-edit{background-position:0 -80px;}
+/*--污染源基本信息-视图--end--*/
+
+/*--head-opt-icon--begin--*/
+.opt-ok-s{width:21px; height:21px; background:url(images/icon-s.png) no-repeat; background-position:0 -167px ; display:inline-block;  vertical-align: middle }
+.opt-fail-s{width:21px; height:21px; display:inline-block; background:url(images/icon-s.png) no-repeat; background-position:0 -146px ; vertical-align: middle }
+/*--head-opt-icon--end--*/
+
+/*--回收站-icon--begin--*/
+.icon-ds{background:url(images/icon-dustion.png)  no-repeat; width: 61px; height: 61px; display: block; display:block; margin: auto; cursor: pointer}
+.ds-waterIn{background-position:0 0;}/*进水口*/
+.ds-water{background-position:0 -61px;}/*水排口*/
+.ds-gas{background-position:0 -122px;}/*气排口*/
+.ds-mp{background-position:0 -183px;}/*水监控点*/
+.ds-mp-waterIn{background-position:0 -366px;}/*进水口监控点*/
+.ds-mp-gas{background-position:0 -427px;}/*气监控点*/
+.ds-mdi{background-position:0 -244px;}/*污水在线监测仪器*/
+.ds-mdi1{background-position:0 -488px;}/*废气在线监测仪器*/
+.ds-mdi2{background-position:0 -549px;}/*水流量计*/
+.ds-mdi3{background-position:0 -610px;}/*气流量计*/
+.ds-pte{background-position:0 -305px;}/*治理设施*/
+/*--回收站-icon--end--*/
+

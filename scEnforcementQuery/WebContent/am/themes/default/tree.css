@@ -1,0 +1,78 @@
+@charset "utf-8";
+/*easyui样式*/
+@import "../../vendor/easyui/gray/easyui.css";
+/*easyui样式修改补丁*/
+@import "easyui-patch.css";
+/*自动监控所用图标样式*/
+@import "icon.css";
+@import "control.css";
+
+/*自动监控4.0公用样式
+*按钮，搜索框，文本框，间距，宽度，边距，链接，字体，表格等可以复用的样式。
+*/
+
+body,html{
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    font-family: "微软雅黑", Arial, Verdana, Helvetica, sans-serif;
+    background: url('images/index/pla-bg.jpg') top center no-repeat;
+}
+
+ul{list-style:none;}
+
+.head{
+    background: url('images/index/nav-bg.png') repeat-x;
+    height: 40px;
+    position: relative;
+}
+.p-nav{
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    position: absolute;
+    cursor: pointer;
+}
+.p-nav-menu{background: url('images/index/p-nav-icon1-on.png'); width: 40px;
+    height: 40px;display: inline-block;
+}
+.p-nav  .p-nav-menu:hover,.p-nav .on{background: url('images/index/p-nav-icon1.png') ; background-color: #0085E3;}
+
+#desktop{
+    width: 910px;
+    height: 450px;;
+    margin: 150px auto auto auto;
+    position: relative; overflow: auto;
+}
+#desktop li{list-style: none;}
+#desktop ul li{float: left}
+.dots{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -200px;;
+    width: 400px;
+    border-radius: 15px;
+    height: 30px;
+    z-index: 999;
+    color: white;
+    text-align: center;
+}
+.dots li{
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    text-align: center;
+    border-radius: 7.5px;
+    background-color: #09599B;
+    margin-right: 15px;
+    cursor: pointer;
+}
+.dots .active{
+    background-color: #018FFB;
+}
+#menus{position: absolute;top: 40px;left: 0;width: 360px;border-radius:0 5px  5px  5px;background-color: #f1f0f0; border: 1px solid #f7f7f7; border-top: none; min-height:510px;z-index: 5;
+    display: block;
+    max-height: 850px;
+    overflow: auto;
+}

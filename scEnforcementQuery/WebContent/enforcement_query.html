@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>国控数据查询页面</title>
+	<meta charset="UTF-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link  rel="stylesheet" type="text/css"  href="am/themes/default/main.css" />
+	<link rel="stylesheet" href="am/themes/default/pad.css">
+    <!--<script src="am/script/all.js" /></script>-->
+    <!--<script src="am/vendor/echarts/dist/echarts.js" /></script>-->
+	<!--<script src="am/script/all.js"></script>-->
+	<!--<script src="am/vendor/echarts/dist/echarts.js"></script>-->
+
+	<style>
+		body,html{
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+
+
+
+</head>
+<body>
+<div class="queryTerms-many">
+	<form id="searchForm">
+		<input type="hidden" name="psId" id="psId" value="" />
+		<input type="hidden" name="mpId" id="mpId" value="" />
+		<input type="hidden" name="mpTypeCode" id="mpTypeCode" value=""/>
+		
+		
+		<table class="table-condition" cellpadding="0" cellspacing="0">
+			 
+			<tr>
+				<td>污染源&nbsp;&nbsp;&nbsp;：<input class="textBox w220 "  onclick="openSearchWindow()"  value="" id="search_psId"  name="search_psId" readonly="readonly" placeholder="请点击选择" /></td>
+				<td>监控点&nbsp;&nbsp;&nbsp;：<input class="textBox w220 " value="" id="search_mpId"  name="search_mpId" readonly="readonly" /></td>
+				<td>数据类型：<input class="textBox w220" value="" name="search_dataType"  id="search_dataType" /></td>
+				<td>修约类型：<input class="textBox w220" value="" name="search_revisType"  id="search_revisType"/></td>
+				
+			</tr>
+			<tr>
+				<td>起止时间：<input class="textBox w220" value=""   name="search_startEndTimeParm"  id="search_startEndTimeParm"/></td>
+				<td><input type="button" class="bt_blue ml5"  id="btn_searchs"  onclick="serchPsInfo()" value="查&nbsp;询"/></td>
+				<td></td>
+				<td><ul class="tabView mr75 mt7  fr">
+		             <a id="iconView" onclick="changeView()" class="roundLeft-s on btn"><span class="icon-curve"></span></a>
+		             <a id="iconMix" onclick="changeTable()" class="roundRight-s btn"><span class="icon-grid"></span></a>
+		         </ul></td>
+			</tr>
+		</table>
+	</form>
+</div>
+<div class="monitorDataWrapper" style="top:100px">
+       <div class="tabContent" style="height: 100%;width: 100%">
+           <div class="myChart" id="mychart" style="width: 98%" >
+           </div>
+           <div class="myGrid tableLine dataRoundGrid" id="mygrid" style="display: none;">
+               <table id="monitorDataList">
+
+               </table>
+           </div>
+       </div>
+       
+ </div>
+</body>
+
+
+<!--<script src="am/script/common.js"></script>-->
+<!--<script src="am/script/index.js"></script>-->
+<!--<script src="am/vendor/echarts/dist/echarts.js"></script>-->
+<script src="am/script/all.js"></script>
+<script src="am/vendor/echarts/dist/echarts.js"></script>
+
+<script type="text/javascript">
+
+
+var _pagesize=24;
+var xAxis,yAxis;
+var charsColumns;
+var monitor_data;
+
+$(function() {// 初始化内容
+		
+		var sdate1 = new Date(); 
+		var edate1=  new Date(); 
+		$('#search_startEndTimeParm').jfDoubleDate({
+			sdate:sdate1,
+			edate:edate1,
+			emaxdate:new Date()
+		});
+		
+		formatTime();
+		
+		$('#search_dataType').jfchoice({	
+			data:[{"id":"1","text":"日数据"},{"id":"2","text":"小时数据"}],
+			text:'text',
+			value:'id',
+			defaultIndex:1
+		});
+		$('#search_revisType').jfchoice({	
+			data:[{"id":"0","text":"修约前"},{"id":"1","text":"修约后"}],
+			text:'text',
+			value:'id',
+			defaultIndex:0
+		});
+		
+		
+		
+}); 
+	//弹窗查询选择污染源
+	function openSearchWindow(){
+		var url=baseUrl('am/template/psinfoParam.html');
+
+		if ($('body').width()<1024){
+            var bodyW= $('body').width()*0.9;
+            var bodyH=$('body').height()*0.8;
+            jf.loadWindow("企业监控点选择",url,bodyW,bodyH);
+        }else {
+            jf.loadWindow("企业监控点选择",url,860,570);//450
+		}
+
+	}
+	
+
+
+
+
+
+
+	//切换视图
+   function changeView(){
+	   $("#iconView").addClass('on');
+	   $("#iconMix").removeClass('on');
+	   $("#mygrid").hide();
+	   $('#monitorDataList').datagrid("resize");
+	   
+   } 
+   //切换table视图
+ 	 function changeTable(){
+ 		$("#iconMix").addClass('on');
+ 	   $("#iconView").removeClass('on');
+	   $("#mygrid").show();
+	   $('#monitorDataList').datagrid("resize");
+	
+   }
+   
+ 	//确定选择
+ 	function selectSave(){
+ 		var rows =$("#mpTable").datagrid("getChecked");
+ 		var mpId ='';
+ 		var mpName ='';
+ 		var psId='';
+ 		var psName='';
+ 		var mpType='';
+ 		if(rows.length>0){
+ 			for (var i = 0; i < rows.length; i++) {
+ 				 mpId =rows[0].mpCode;
+ 				 mpName =rows[0].mpName;
+ 				 psId=rows[0].psCode;
+ 				 psName=rows[0].psName;
+ 				 mpType=rows[0].mpType;
+ 				
+ 			}
+ 			$('#search_psId').val(psName);
+ 			$('#search_mpId').val(mpName);
+ 			$('#psId').val(psId);
+ 			$('#mpId').val(mpId);
+ 			$('#mpTypeCode').val(mpType);
+ 		}
+ 		
+ 		jf.closeWindow();
+ 	}
+    
+    
+	//查询方法
+	function serchPsInfo(){
+		var ps_Id =$('#psId').val();
+		if(ps_Id==''||ps_Id==null||ps_Id==undefined||ps_Id=='请点击选择'){
+			jf.sendNotice('提示','抱歉!污染源不能为空',0,2);
+			return ;
+		}
+		var mp_Id=$('#mpId').val();
+		if(mp_Id==''||mp_Id==null||mp_Id==undefined){
+			jf.sendNotice('提示','抱歉!监控点不能为空',0,2);
+			return ;
+		}
+		var startEndTimeParm=$("input[name='search_startEndTimeParm']").val();
+		var params=$('#searchForm').serialize();
+		params= decodeURIComponent(params,true);//解决序列化中文乱码
+
+		var url =baseUrl('enforcementQueryAction!jsonList.page');
+      //  var url =baseUrl('am/data/table.json');
+
+
+		
+		JqAjax(url,'post',params,function(data){
+			if(data.rows==null||data.rows ==undefined||data.rows==''||data.rows==[]){
+				jf.sendNotice('提示','抱歉!未查到符合条件的数据',0,2);
+			}else{
+				 //折线图数据处理
+		           getEchartData(data);
+				
+		            echartsLoad();//加载echarts
+		            
+		           datagridLoad(data);//加载datagrid
+			}
+			
+		});
+		
+	}
+	
+	function echartsLoad(){
+		  // 路径配置
+        require.config({
+            paths: {
+                echarts: 'am/vendor/echarts/dist'
+            }
+        });
+        
+        // 使用
+        require(
+            [
+                'echarts',
+                'echarts/chart/line'
+                //'echarts/theme/macarons'
+                //'echarts/chart/bar' // 使用柱状图就加载bar模块，按需加载
+            ],
+            function (ec) {
+                // 基于准备好的dom，初始化echarts图表
+                 var myChart = ec.init(document.getElementById('mychart'),'macarons'); 
+                
+                var option = {
+                	    title : {
+                	        text: '污染源监控点监控数据视图',
+                	        //subtext: '纯属虚构'
+                            padding:[30,0,0,0]
+                	    },
+                	    tooltip : {
+                	        trigger: 'axis'
+                	    },
+                	    legend: {
+                	        data:charsColumns
+                	    },
+                	    toolbox: {
+                	        show : true,
+                	        feature : {
+                	         //  mark : {show: true},
+                	          //  dataView : {show: true, readOnly: false},
+                	          //magicType : {show: true, type: ['line', 'bar']}
+                	          // restore : {show: true},
+                	         // saveAsImage : {show: true}
+                	        }
+                	    },
+                	    calculable : true,
+                	    xAxis : [{ 
+                	    	type: 'category',
+                        	data: xAxis
+                	    }],
+                	    yAxis : [
+                	        {
+                	            type : 'value',
+                	            axisLabel : {
+                	                formatter: '{value}'
+                	            }
+                	        }
+                	    ],
+                	    series : monitor_data,
+                	    noDataLoadingOption :{
+    					    text: '暂无数据',
+    					    effect:'bubble',
+    					    effectOption : {
+    					        effect: {
+    					            n: 0 //气泡个数为0 
+    					        }
+    					    }
+    					}
+                	};
+        
+                // 为echarts对象加载数据 
+                myChart.setOption(option); 
+            }
+        );
+		
+	}
+	
+	/**
+	* 加载datagrid
+	*/
+	var monitorDataGrid;
+	
+	function datagridLoad(data){
+		
+		var columns=[];
+		//var mpType=data.mpType; //4 6 水   5 气
+		//var revisType = data.revisType;//0 修约前  1 修约后
+		
+		if(data.columns1.length>0 &&data.columns2.length>0 && data.rows.length>0){
+			var columns1 =[];
+			var columns2=[];
+		    for(var i=0; i<data.columns1.length;i++){
+				var column =data.columns1[i];
+				columns1.push({field:column.field,title:column.title,align:'center',colspan:column.colspan,rowspan:column.rowspan,width:160});
+			}
+			for(var i=0; i<data.columns2.length;i++){
+				var column =data.columns2[i]; 
+				columns2.push({field:column.field,title:column.title,align:'center',formatter:formatNoData,width:100});
+			}
+			columns.push(columns1);
+			columns.push(columns2);
+		}
+		
+		
+		//绑定监控列表数据
+		monitorDataGrid=$('#monitorDataList').datagrid({
+			data:data.rows,
+			singleSelect: true,
+			nowrap: true,
+			striped:true,
+			pagination: true,
+			rownumbers:true,
+			scrollbarSize:0,
+			fit:true,
+			frozenColumns:[[ 
+				{field:'monitorTime',title:'监控时间',align:'center',rowspan:1,width:160}
+			]],
+			columns:columns,
+			pageNumber:1,
+			pageSize:_pagesize,
+			loadFilter:pagerFilter
+		});
+	}
+	
+	function formatNoData(val, row, index){
+		if(val==null||val==undefined||val==''){
+			return "-";
+		}else{
+			return val;
+		}
+	}
+
+
+    function getEchartData(data){
+        xAxis=[],yAxis=[],charsColumns=[],monitor_data=[];
+        var mpType=data.mpType; //4 6 水   5 气
+        var temp =0;
+        for(var a=0;a<data.columns1.length;a++){
+        	var column = data.columns1[a];
+        	var title =column.title;
+        	charsColumns.push(title);
+        	if(title.indexOf("排放量") != -1){
+        		monitor_data.push({name:title,field:column.field,type:'line',data:[]});
+        	}else if(title.indexOf("氧含量") != -1){
+        		monitor_data.push({name:title,field:column.field,type:'line',data:[]});
+        	}else{
+        		if(mpType==5){//气有折算
+        			if(a>=2){
+        				if(a==2){
+        					var columny = data.columns2[temp];
+        				}else if(a>2){
+        					temp=temp+3
+        					var columny = data.columns2[temp];
+        				}
+               			
+                       	var titley =columny.title;
+                      	monitor_data.push({name:title,field:columny.field,type:'line',data:[]});
+
+        			}
+        			
+        		}else{
+					if(a>=1){
+						if(a==1){
+        					var columny = data.columns2[temp];
+        				}else if(a>1){
+        					temp=temp+2;
+        					var columny = data.columns2[temp];
+        				}
+					 	var titley =columny.title;
+                      	monitor_data.push({name:title,field:columny.field,type:'line',data:[]});
+					}
+
+        		}
+        		
+        	}
+        	
+          
+        }
+        for(var i=0;i<data.rows.length;i++){//x
+        	var yVal=[];
+            var row=data.rows[i];
+            xAxis.push(row.monitorTime); 
+          
+        }
+          	
+	        	
+       	//循环行
+		for(var i = 0; i<data.rows.length;i++){
+			var row = data.rows[i];
+			var field;
+        	for(var j=0;j<monitor_data.length;j++){
+        		var obj =monitor_data[j];
+        		var title = obj.name;
+        		field = obj.field;
+        		monitor_data[j].data.push(row[field]==null?'-':row[field]);
+        		
+        	}
+		}
+	   
+    }
+
+    /**
+	 * 初始化双日期控件值
+	 * */
+	function formatTime(){
+		var begin=new Date();
+		var end=new Date();
+		//begin.setMonth((new Date().getMonth()-1));
+		beginTime= begin.format("yyyy-MM-dd");
+		endTime=end.format("yyyy-MM-dd");
+		$("input[name='search_startEndTimeParm']").val(beginTime+"至"+endTime);
+	}
+
+	//客户端分页
+	function pagerFilter(data){
+		if (typeof data.length == 'number' && typeof data.splice == 'function'){    // 判断数据是否是数组
+			data = {
+	            total: data.length,
+	            rows: data
+	        }
+	    }else{
+	    	data=data
+	    }
+	    var dg = $(this);
+	    var opts = dg.datagrid('options');
+	    var pager = dg.datagrid('getPager');
+	    pager.pagination({
+	        onSelectPage:function(pageNum, pageSize){
+	        	pager.pagination('loading');
+	            opts.pageNumber = pageNum;
+	            opts.pageSize = pageSize;
+	            pager.pagination('refresh',{
+	                pageNumber:pageNum,
+	                pageSize:pageSize
+	            });
+	            dg.datagrid('loadData',data);
+	            pager.pagination('loaded');
+	        }
+	    });
+	    if (!data.originalRows){
+	    	data.originalRows = (data.rows);
+	    }
+	    var start = (opts.pageNumber-1)*parseInt(opts.pageSize);
+	    var end = start + parseInt(opts.pageSize);
+	    data.rows = (data.originalRows.slice(start, end));
+	    return data;
+	}
+	
+	
+	
+
+</script>
+</html>

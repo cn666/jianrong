@@ -1,0 +1,130 @@
+<style type="text/css">
+	.queryTerms-single-bn{height:45px; line-height:44px;}
+	.table-list{width:100%;height:45px; border:none; background:none; text-align:left; font-size: 12px;}
+	.table-list tr{height:45px; }
+	.table-list td{padding-top: 0px; height:45px; }
+
+</style>
+<div class="tab-content ">
+	<div class="voucherWapper h480">
+		<div class="queryTerms-single-bn"  >
+			<table class="table-list" cellpadding="0" cellspacing="0"  > 
+				<tr>
+					<td class="w60 w61">行政区划：</td><td><input  class="textBox w220 ml25"   name="search_regionCodeParm"   id="search_regionCodeParm" /></td>
+					<td class="w60 w61">企业名称：</td><td> <input class="textBox w220 ml25" value="" name="search_nameParm"  id="search_nameParm"  placeholder="企业名称"/>
+					<input type="button" class="bt_blue ml10" value="查&nbsp;询"  onclick="serchPsMpInfo(1)"/></td>
+				</tr>
+			</table> 
+		</div>
+		<div class="tableLine dataRoundGrid  tableitem"  style="height:423px">
+			<table class="ui-datagrid "  id="mpTable" width="100%" >
+				<thead>
+					<tr>
+						<th data-options="field:'ck',checkbox:true"></th>
+						<th data-options="field:'id',hidden:true"></th>
+						<th data-options="field:'mpId',hidden:true"></th>
+						<th data-options="field:'psId',hidden:true"></th>
+						<th data-options="field:'mpType',hidden:true"></th>
+						<th data-options="field:'regionName',width:150">行政区划</th>
+						<th data-options="field:'psName',width:250">企业名称</th>
+						<th data-options="field:'mpName',width:240,formatter:formatType">监控点名称</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+	</div>
+</div>
+<div  class="windowSave">
+	<input type="button" class="bt_blue" onclick="selectSave()" id="btn_save"   value="确&nbsp;定"/>
+</div>
+ 
+<script type="text/javascript"> 
+	initForm();
+	var regionCode;
+$(function() {// 初始化内容
+
+//	var url = baseUrl('enforcementQueryAction!getDataUserRegionCode.page');
+
+	var url='am/data/region_sichuan.json'
+
+	JqAjax(url,'get',null,function(userData){
+
+		if(userData){
+			var regiontemp=userData.userRegionCode;
+			regionCode=regiontemp;
+			$("#search_regionCodeParm").jfRegion(regiontemp);
+			$.get(Actions.common.region).done(function(data){
+		       	var regiondata=[jsonObjectById(data,regiontemp)];
+		    	$("input[name='search_regionCodeParm']").val(regiontemp); 
+		       	$("#search_regionCodeParm").val(regiondata[0].text);
+			});
+			 
+		 }
+	  });
+	
+	setTimeout('loadMpTable()', 120); //延迟100
+	
+});
+
+	function loadMpTable(){
+
+        //var url = baseUrl('am/data/table1.json');
+		$('#mpTable').datagrid({
+			method: 'post',
+			//url:url,
+			url:baseUrl('enforcementQueryAction!getPsMpInfo.action'),
+			queryParams:{
+				regionCode:regionCode,//$("input[name='search_region']").val(),
+				keyName:$("#search_nameParm").val()
+			},
+			width: '100%',
+			pageSize:20,
+			idField:'id',
+			singleSelect: true,
+			rownumbers:true,
+			nowrap: true,
+			pagination:true,
+			selectOnCheck:true,
+			checkOnSelect:false,
+			scrollbarSize: 0,
+			fit:true
+		});
+
+		$(window).resize(function(){
+			$("#mpTable").datagrid("resize");
+		});
+	}
+	
+	
+
+	
+
+	
+	/**
+	 * 查询
+	 * @param pageNo
+	 */
+	function serchPsMpInfo(pageNo){
+		$('#mpTable').datagrid('clearSelections');
+		var queryParams = $('#mpTable').datagrid('options').queryParams;
+		queryParams.regionCode = $("input[name='search_regionCodeParm']").val();
+		queryParams.keyName =$("#search_nameParm").val();
+		$('#mpTable').datagrid('options').queryParams = queryParams;
+		$('#mpTable').datagrid('options').pageNumber=pageNo;
+		var pager = $('#mpTable').datagrid('getPager');
+		pager.pagination('refresh',{ pageNumber:pageNo  });
+		$("#mpTable").datagrid('reload');
+	}
+	
+	//格式化类型
+	function formatType(val, row, index){
+		var mpType=row.mpType;
+		if(mpType=='5'){
+			return '<div   class="monitorPoint"><a style="max-width:118px;" class="monitorPoint-cut" title="{0}">{0}</a><span class="tips que">气</span></div>'.format(val);
+
+		}else{
+			return '<div   class="monitorPoint"><a  style="max-width:118px;" class="monitorPoint-cut" title="{0}">{0}</a><span class="tips kao inline">水</span></div>'.format(val);
+		}
+	}
+
+</script>

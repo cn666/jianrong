@@ -1,0 +1,205 @@
+{
+  "total": 2953,
+  "rows": [
+    {
+      "id": "510100000002210",
+      "regionCode": "510101000",
+      "psName": "四川大一水务有限责任公司（成都",
+      "psCode": "510100000002",
+      "regionName": "市辖区",
+      "mpType": "4",
+      "mpName": "入河排污口",
+      "mpCode": "210"
+    },
+    {
+      "id": "510100000002201",
+      "regionCode": "510101000",
+      "psName": "四川大一水务有限责任公司（成都",
+      "psCode": "510100000002",
+      "regionName": "市辖区",
+      "mpType": "4",
+      "mpName": "污水排放口",
+      "mpCode": "201"
+    },
+    {
+      "id": "5101000000041",
+      "regionCode": "510106000",
+      "psName": "成都市排水有限责任公司（成都市",
+      "psCode": "510100000004",
+      "regionName": "金牛区",
+      "mpType": "4",
+      "mpName": "污水排放口",
+      "mpCode": "1"
+    },
+    {
+      "id": "5101000000044",
+      "regionCode": "510106000",
+      "psName": "成都市排水有限责任公司（成都市",
+      "psCode": "510100000004",
+      "regionName": "金牛区",
+      "mpType": "6",
+      "mpName": "34",
+      "mpCode": "4"
+    },
+    {
+      "id": "5101000000059",
+      "regionCode": "510131000",
+      "psName": "蒲江县城乡排水有限公司（蒲江县",
+      "psCode": "510100000005",
+      "regionName": "蒲江县",
+      "mpType": "6",
+      "mpName": "城市污水处理厂进水口",
+      "mpCode": "9"
+    },
+    {
+      "id": "5101000000051",
+      "regionCode": "510131000",
+      "psName": "蒲江县城乡排水有限公司（蒲江县",
+      "psCode": "510100000005",
+      "regionName": "蒲江县",
+      "mpType": "4",
+      "mpName": "污水排放口",
+      "mpCode": "1"
+    },
+    {
+      "id": "5101000000061",
+      "regionCode": "510129000",
+      "psName": "四川中测环境技术有限公司大邑分",
+      "psCode": "510100000006",
+      "regionName": "大邑县",
+      "mpType": "4",
+      "mpName": "污水排放口",
+      "mpCode": "1"
+    },
+    {
+      "id": "5101000000071",
+      "regionCode": "510129000",
+      "psName": "四川大一水务有限责任公司大邑分",
+      "psCode": "510100000007",
+      "regionName": "大邑县",
+      "mpType": "4",
+      "mpName": "污水排放口",
+      "mpCode": "1"
+    },
+    {
+      "id": "5101000000081",
+      "regionCode": "510105000",
+      "psName": "成都市排水有限责任公司第八净水",
+      "psCode": "510100000008",
+      "regionName": "青羊区",
+      "mpType": "4",
+      "mpName": "污水排放口",
+      "mpCode": "1"
+    },
+    {
+      "id": "5101000000091",
+      "regionCode": "510107000",
+      "psName": "成都市排水有限责任公司（成都市",
+      "psCode": "510100000009",
+      "regionName": "武侯区",
+      "mpType": "4",
+      "mpName": "污水排放口",
+      "mpCode": "1"
+    },
+    {
+      "id": "5101000000098",
+      "regionCode": "510107000",
+      "psName": "成都市排水有限责任公司（成都市",
+      "psCode": "510100000009",
+      "regionName": "武侯区",
+      "mpType": "6",
+      "mpName": "成都市第五污水处理厂进水口",
+      "mpCode": "8"
+    },
+    {
+      "id": "5101000000103",
+      "regionCode": "510108000",
+      "psName": "成都市排水有限责任公司（成都市",
+      "psCode": "510100000010",
+      "regionName": "成华区",
+      "mpType": "4",
+      "mpName": "污水排放口",
+      "mpCode": "3"
+    },
+    {
+      "id": "5101000000113",
+      "regionCode": "510124000",
+      "psName": "成都北控蜀都投资有限公司（成都",
+      "psCode": "510100000011",
+      "regionName": "郫县",
+      "mpType": "4",
+      "mpName": "污水排放口",
+      "mpCode": "3"
+    },
+    {
+      "id": "5101000000141",
+      "regionCode": "510183000",
+      "psName": "成都春源食品有限公司",
+      "psCode": "510100000014",
+      "regionName": "邛崃市",
+      "mpType": "4",
+      "mpName": "排放口",
+      "mpCode": "1"
+    },
+    {
+      "id": "5101000000152",
+      "regionCode": "510112000",
+      "psName": "成都市垃圾渗沥液处理厂",
+      "psCode": "510100000015",
+      "regionName": "龙泉驿区",
+      "mpType": "4",
+      "mpName": "排放口",
+      "mpCode": "2"
+    },
+    {
+      "id": "5101000000181",
+      "regionCode": "510100000",
+      "psName": "四川省中西医结合医院",
+      "psCode": "510100000018",
+      "regionName": "成都市",
+      "mpType": "4",
+      "mpName": "排放口",
+      "mpCode": "1"
+    },
+    {
+      "id": "5101000000201",
+      "regionCode": "510122000",
+      "psName": "四川华神兽用生物制品有限公司",
+      "psCode": "510100000020",
+      "regionName": "双流县",
+      "mpType": "4",
+      "mpName": "污水排放口",
+      "mpCode": "1"
+    },
+    {
+      "id": "5101000000221",
+      "regionCode": "510100000",
+      "psName": "成都光洁金属表面处理有限公司",
+      "psCode": "510100000022",
+      "regionName": "成都市",
+      "mpType": "4",
+      "mpName": "排放口",
+      "mpCode": "1"
+    },
+    {
+      "id": "5101000000295",
+      "regionCode": "510104000",
+      "psName": "成都市第二人民医院",
+      "psCode": "510100000029",
+      "regionName": "锦江区",
+      "mpType": "4",
+      "mpName": "污水排放口",
+      "mpCode": "5"
+    },
+    {
+      "id": "5101000000325",
+      "regionCode": "510101000",
+      "psName": "成都兴胜半导体材料有限公司",
+      "psCode": "510100000032",
+      "regionName": "市辖区",
+      "mpType": "4",
+      "mpName": "污水排放口",
+      "mpCode": "5"
+    }
+  ]
+}

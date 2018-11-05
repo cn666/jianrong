@@ -1,0 +1,67 @@
+
+/*--basic--begin--*/
+.conditionBar{height: 44px; line-height: 44px; padding:0 15px; box-sizing:border-box; background-color:#ededed ; border-bottom:1px solid #c3c3c3; box-sizing: border-box;}
+.leftContent-MD{ position: absolute;width:280px; top:89px; bottom:0; overflow: auto;}
+.leftContent-MD1{ position: absolute;width:280px; top:50px; bottom:0; overflow-y: auto;}
+.basicWrapper{padding: 10px 10px 0 10px}
+.basicWrapper1{padding: 10px 20px 0 20px}
+/*--basic--end--*/
+
+/*--审核--begin--*/
+.listView{ font-size:0 ; display: inline-block; vertical-align:top ; }
+.listView a{height:30px;line-height:30px;padding:0 6px ; margin-left:-1px ; display: inline-block; font-size:13px; background-color:#e1e1e1;  border:1px solid  #c3c3c3; cursor: pointer;}
+.listView a.on,.listView a:hover{background-color:#037dca;  border:1px solid #037dca; color: #fff}
+
+.tabView{ font-size:0 ; }
+.tabView a{width:34px;height:30px; display: inline-block; font-size:13px; background-color:#e1e1e1;  border:1px solid  #c3c3c3; cursor: pointer;}
+.tabView a span{width:34px; height:30px; display: block;}
+.tabView a.on,.tabView a:hover{background-color:#037dca;  border:1px solid #037dca; color: #fff}
+
+.tabContent{position:absolute ;width:100%;padding:0 10px; box-sizing: border-box;}
+
+/*--污染源列表--begin--*/
+.psListBar{width:350px; height:35px; margin-top: 10px; margin-left: 10px;}
+.psListBar .content{width:305px;  height:35px; display: inline-block;vertical-align: top; background-color: #fff; box-shadow: 2px 3px 2px rgba(0, 0, 0, 0.2) }
+.psListBar .content ul{  height:21px; display: inline-block; margin-top: 7px; vertical-align: top;padding-right: 15px; border-right:1px solid #b2b2b2;}
+.psListBar .content ul li{ margin-left: 15px;line-height:21px; font-size: 13px; display: inline-block; cursor: pointer }
+.psListBar .content ul li:hover,.psListBar .content ul li.on{ color:#2f87eb}
+.psListBar .iconBt{width:35px;  height:35px; display: inline-block; cursor: pointer; margin-left: 5px; box-shadow: 2px 3px 2px rgba(0, 0, 0, 0.25)}
+.psListBar .iconBt.btNOrmal{ background: url(images/psList-icon.png) no-repeat; background-color: #fff; }
+.psListBar .iconBt.btNOrmal:hover,.psListBar .iconBt.btShow{ background: url(images/psList-icon-show.png) no-repeat; background-color: #2f87eb;}
+
+.psListContent{position:absolute;top:55px;left:10px; width:350px; height:570px;  background-color: #fff; box-shadow: 2px 3px 2px rgba(0, 0, 0, 0.2)}
+.psListContent .searchBar{width:350px; height: 32px;}
+.psListContent .searchBar .text{ border: 1px solid #cdcdcd;width:289px; height: 30px; padding: 0 8px;  display: inline-block; vertical-align: top; margin-top: -1px; line-height: 30px; border-right: none;}
+.psListContent .searchBar .bt{width:44px; height: 32px; display: inline-block; vertical-align: top; margin-top: -1px;  background: url(images/icon-search.png) no-repeat;background-color:#3385ff;  }
+.psListContent ul{padding: 15px; height: 465px;  padding-bottom: 0}
+.psListContent ul li{ margin-bottom: 10px; }
+.psListContent ul li .psIcon{width:30px; height:30px;display: inline-block; vertical-align:top}
+.psListContent ul li .info{width:280px;display: inline-block;}
+.psListContent ul li .info .name{ width:280px;color:#2f87eb;display: block ; line-height: 30px; font-size:14px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis}
+.psListContent ul li .info .tel{  width:280px;display: block; }
+.psListContent ul li .info .address{  width:280px; margin-top:3px;display: block;overflow: hidden; white-space: nowrap; text-overflow: ellipsis}
+/*--污染源列表--end--*/
+
+/*--combobox样式更改--begin--*/
+.comboSelect{height:30px;  display: inline-block;position: relative;overflow: hidden; cursor: pointer}
+.comboSelect .picker{ position:absolute;text-align:center;z-index:55;top:0; left:0; border: none !important; background-color: #e3e3e3 !important;  cursor: pointer}
+.comboSelect .textbox .textbox-text{border:none; cursor: pointer; background: transparent}
+.comboSelect .combo-arrow{ background-color: transparent ;}
+.comboSelect .combo{border-width: 0; background: transparent !important;}
+/*--combobox样式更改--end--*/
+
+/*--地图弹窗内容--begin--*/
+.MW-positionTest{ top:180px; left:450px; border-top: 1px solid #ccc; box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2)}
+
+.mapWindow{ position: absolute;width:800px; height:430px;  }
+.mapWindow .bottomTab{width:100%;height:35px; position: absolute; bottom:0; font-size: 14px; padding: 0 10px; box-sizing: border-box; color:#fff; background-color: #3385ff;  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2) inset}
+.mapWindow .bottomTab li{line-height: 28px;  padding:0 20px; display: inline-block; cursor: pointer }
+.mapWindow .bottomTab li:hover,.mapWindow .bottomTab li.on{background-color: #fff; color:#2f87eb;box-shadow: 2px 3px 2px rgba(0, 0, 0, 0.2); font-weight: bold}
+.mapWindow .content{position: absolute; top:0; left:0; right:0; bottom:35px;}
+
+.monitorDataWrapper{ position: absolute; top:45px; bottom:0; left:0; right:0;}
+.monitorDataWrapper .myChart{ position: absolute;left:10px;right:0;margin-top: 15px; height:95%;}
+.monitorDataWrapper .myGrid{ position: absolute;left:10px;right:10px; height:100%; padding-top: 10px; box-sizing: border-box }
+/*--地图弹窗内容--end--*/
+
+

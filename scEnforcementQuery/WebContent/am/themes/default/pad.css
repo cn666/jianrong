@@ -1,0 +1,33 @@
+/*适配ipad*/
+@media screen and (min-width:600px) and (max-width:1024px){
+    .table-condition{
+        min-width: 0;
+    }
+    input.textBox{
+        width: 100px ;
+    }
+    #search_startEndTimeParm,#search_psId{
+        width: 165px!important;
+    }
+    .tableitem{
+        width: 100%;
+        height: 89% !important;
+    }
+    .voucherWapper{
+        width: 100%;
+        height: 100%;
+        margin:0;
+        padding: 5px;
+        box-sizing: border-box;
+    }
+    .tab-content{
+        width: 100%;
+        height: 100%;
+    }
+    .w61{
+        width: 65px;
+    }
+    .ml25{
+        margin-left:0 !important;
+    }
+}

@@ -1,0 +1,129 @@
+.view-container{position: absolute;left: 101px; top:0; bottom: 0;right: 0;}
+.view-container h2{text-align: center;font-size: 18px; color: #838383; font-weight: bold; }
+#viewMain{position: absolute; top: 60px;left: 0;right: 0;bottom: 50px;overflow-y: auto; }
+.view-box {position:absolute;top:30px; left: 50px;right: 0;bottom: 0; box-sizing: border-box;  padding-bottom: 30px; }
+ .block {height:61px;width:61px; padding-right: 10px; position: absolute;
+     /*border: 1px solid #ccc */
+     /*z-index: 80;*/
+ }
+ .img-block{
+     height:61px;width:61px; background:url(images/view/psview.png)  no-repeat;
+ }
+ /*.block:hover{border-color: #00a1ff}*/
+.view-box .name{position: absolute; bottom: -20px; left: 0;width: 60px; text-align: center; height: 16px;  color: #808080;display: inline-block;text-overflow:ellipsis; overflow: hidden;white-space:nowrap}
+ .mi{ position:absolute;width:175px; padding: 0px; background-color: #fff;  border: 1px solid #cbcbcb; border-top:none ;
+    -moz-border-radius: 6px 6px 6px 6px; -webkit-border-radius: 6px 6px 6px 6px; border-radius: 6px 6px 6px 6px;
+    -moz-box-shadow: 3px 3px 8px #b1b1b1;  -webkit-box-shadow: 3px 3px 8px #b1b1b1;  box-shadow: 2px 2px 3px #acacac;
+    left: 70px;
+    top:5px;
+    z-index: 350;
+    display: none;/**/
+     text-align: left;
+}
+
+ .mi i{ top: 22px; left: -10px; position: absolute ;  width:10px;height:16px; display: block;
+    background: url(images/view/menu-icon.png) no-repeat 0 -96px;
+    z-index: 100}
+ .block:hover .mi{display: block;}
+ .mi a{width:165px;line-height: 16px; padding: 9px 10px 9px 0px; display: inline-block; border-top: 1px solid #cfcfcf; color: #838383}
+ .mi a:hover{ background-color:#e5e5e5; }
+ .mi a span{ margin:0px  5px 0px 10px;}
+ .mi a.disabled{background-color: #f7f7f7; cursor: default; color: #c2c1c1;;}
+ .mi a.disabled .menu-add-r{background-position:0 -112px;}
+ .mi a.disabled .menu-add-s{background-position:0 -128px;}
+ .mi a.disabled .menu-delete{background-position:0 -144px;}
+ .mi a.disabled .menu-data{background-position:0 -160px;}
+ .mi a.disabled .menu-edit{background-position:0 -178px;}
+
+
+.ps-item{height:61px;width:61px; background:url(images/view/psview.png)  no-repeat; display: inline-block; cursor: pointer;position: relative;}
+ .line-x{ display: inline-block; height: 4px; border: 1px dashed #B5B5B5; background: white; position: absolute; z-index: -2}
+  .line-y{ display: inline-block; width: 4px; border: 1px dashed #B5B5B5; background: white; position: absolute;z-index: -2}
+  .v-pte{background-position:0 0;cursor: pointer;  }
+  .v-pte:hover{background-position:0 -748px;}
+  .v-ps{background-position:0 -61px;cursor: pointer}
+  .v-ps:hover{background-position:0 -810px;}
+  .v-water-in{background-position:0 -122px;cursor: pointer}
+  .v-water-in:hover{background-position:0 -873px;}
+  .v-water{background-position:0 -183px;cursor: pointer}
+  .v-water:hover{background-position:0 -936px;}
+  .v-pos{background-position:0 -245px;cursor: pointer}
+  .v-gas{background-position:0 -305px;cursor: pointer}
+  .v-gas:hover{background-position:0 -999px;}
+  .v-add{background-position:0 -366px;cursor: pointer}
+  .v-add:hover{background-position:0 -550px;}
+  .v-mp{background-position:0 -427px;cursor: pointer}/*水监控点*/
+  .v-mp:hover{background-position:0 -1062px;}
+  .v-mp-waterIn{background-position:0 -1190px;cursor: pointer}/*进水口监控点*/
+  .v-mp-waterIn:hover{background-position:0 -1254px;}
+  .v-mp-gas{background-position:0 -1318px;cursor: pointer}/*气监控点*/
+  .v-mp-gas:hover{background-position:0 -1382px;}
+  .v-mdi{background-position:0 -488px;cursor: pointer}/*污水在线监测仪器*/
+  .v-mdi:hover{background-position:0 -1123px;}
+  .v-mdi1{background-position:0 -1446px;cursor: pointer}/*废气在线监测仪器*/
+  .v-mdi1:hover{background-position:0 -1510px;}
+  .v-mdi2{background-position:0 -1574px;cursor: pointer}/*水流量计*/
+  .v-mdi2:hover{background-position:0 -1638px;}
+  .v-mdi3{background-position:0 -1702px;cursor: pointer}/*气流量计*/
+  .v-mdi3:hover{background-position:0 -1766px;}
+  .v-add-s{background-position:0 -612px; height:13px;width:13px; background:url(images/view/psview.png)  no-repeat; display: inline-block; vertical-align: middle;cursor: pointer}
+  .v-que{position: absolute;top:-4px;right:7px;height:20px;width:20px; background:url(images/view/psview.png)  no-repeat; display: inline-block;background-position:0 -629px;vertical-align: middle;}
+  .v-que2{position: absolute;top:-4px;right:-5px;height:20px;width:20px; background:url(images/view/psview.png)  no-repeat; display: inline-block;background-position:0 -629px;vertical-align: middle;}
+  .v-left{ position: absolute;height:25px;width:25px; background:url(images/view/psview.png)  no-repeat; display: inline-block;background-position:0 -709px;vertical-align: middle;z-index: -1}
+  .v-up{ position: absolute;height:25px;width:25px; background:url(images/view/psview.png)  no-repeat; display: inline-block;background-position:0 -683px;vertical-align: middle;z-index: -1}
+  .v-dot{ position: absolute;height:25px;width:25px; background:url(images/view/psview.png)  no-repeat; display: inline-block;background-position:0 -653px;vertical-align: middle; z-index: -1; margin-left: -1px;}
+  .v-add-s{height:13px;width:13px; background:url(images/view/psview.png)  no-repeat; display: inline-block;background-position:0 -612px;vertical-align: middle;cursor: pointer}
+  .v-add-s:hover{height:13px;width:13px; background:url(images/view/psview.png)  no-repeat; display: inline-block;background-position:-13px -612px;vertical-align: middle;cursor: pointer}
+.block-items{
+    min-width:340px;
+    border: 1px solid #C4C3C3;
+    border-radius: 5px;
+    background-color: #F2F2F2;
+    position: absolute;
+    display: inline-block;
+    margin-top: -30px;
+}
+.block-items .item {width: 81px;height: 88px; display: inline-block; text-align: center; padding-top: 5px;position: relative;}
+.block-items .item:hover .mi {display: block; left: 80px;}
+.block-items .items{ border-top: 1px solid #C4C3C3; background: #e8e8e8; line-height:34px; height: 36px; overflow: hidden;  box-sizing: border-box; border-radius: 0 0 5px 5px; padding-left: 8px; }
+.block-items:hover{
+    z-index: 999;
+}
+.block-items .items:hover{
+    height: auto;
+    z-index: 999;
+}
+.block-items .items a{border: 1px solid #C4C3C3;background:#f8f8f8; padding: 2px 5px; border-radius: 4px; margin-right: 5px; box-sizing: border-box; color: #808080; white-space: nowrap;}
+.block-items .items a:hover{ border:1px solid #038cbe;background-color:#139fe8; color:#fff; }
+.block-items .items a .v-add-s{margin-right: 5px; vertical-align: -2px;}
+.block-items .items a:hover .v-add-s{background-position:-13px -612px;}
+.block-items .items a.disabled{border: 1px solid #d0d0d0; background:#f8f8f8; color: #c6c6c6; cursor: default;}
+.block-items .items a.disabled:hover{border: 1px solid #d0d0d0; background:#f8f8f8; color: #c6c6c6}
+.block-items .items a.disabled .v-add-s{ height:13px;width:13px; background:url(images/view/psview.png)  no-repeat; background-position:-26px -612px;display: inline-block;  vertical-align: middle;}
+
+
+
+
+.equipment{position: absolute;bottom: 0;width: 100%;    background-color: #F2F2F2;z-index: 100 }
+.equipment .head{height: 36px; line-height: 36px; font-size: 13px; background-color: #e8e8e8; border-top: 1px solid #c3c3c3;  border-bottom: 1px solid #c3c3c3;  }
+.equipment .title{width:110px;line-height: 36px; display:block; border-left: 1px solid #c3c3c3; text-align: center; cursor: pointer }
+.equipment .on{background-color: #cbcbcb;}
+.equipment .hide{width:36px; height:36px;  display:block; border-left: 1px solid #c3c3c3;  background:url(images/icon-big.png) no-repeat; background-position:0 -36px;}
+.equipment .show{background:url(images/icon-big.png) no-repeat; background-position:0 0;}
+.equipment .hide:hover,.equipment .show:hover{background-color: #cbcbcb;border-left: 1px solid #b4b4b4; }
+
+.equipment .list{margin-top: 10px; margin-right: 10px; height:220px; overflow-y:auto ; display: none}
+/*.equipment:hover .list{display: block;}*/
+.equipment .list ul li{width:89px; position: relative; display: inline-block; vertical-align: top; margin-left: 10px; margin-bottom: 10px;text-align: center; cursor: pointer}
+.equipment .list ul li:hover p{display:block;}
+.equipment .list ul li .img{width:61px; height: 61px; display: inline-block; margin: 8px 12px 0px 12px}
+.equipment .list ul li .text{ width:79px; display:inline-block; margin: 2px 5px 0px 2px; text-align: center;}
+.equipment .list ul li p{display:none; width:88px; height:100%; position: absolute; z-index:555; top:0; left:0;
+    -moz-border-radius: 6px 6px 6px 6px; -webkit-border-radius: 6px 6px 6px 6px; border-radius: 6px 6px 6px 6px;}
+.equipment .list ul li p .shadow{position: absolute; top:0px; left:0px ; width:68px; height:96%;display: inline-block; padding: 10px 10px 0 10px; z-index: -1; position: absolute; background-color: #1a1a1a;
+    filter:alpha(opacity=30);  -moz-opacity:0.3;  -khtml-opacity: 0.3;  opacity: 0.3;-moz-border-radius: 6px 6px 6px 6px; -webkit-border-radius: 6px 6px 6px 6px; border-radius: 6px 6px 6px 6px;}
+    
+    
+    
+
+

@@ -1,0 +1,166 @@
+#jpwClose,
+#jpwNext,
+#jpwPrevious,
+#jpwFinish {
+  color: #00c7ff;
+  cursor: pointer;
+  font-family: 'xjlFont','Microsoft yahei';
+  font-size: 18px;
+  font-weight: lighter;
+}
+#jpwOverlay {
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  z-index: 999999;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+#jpwOverlay.transparent {
+  background: none;
+}
+#jpWalkthrough.jpw-scrolling .overlay-hole > div {
+  box-shadow: inset 0 0 10px 1000px rgba(0, 0, 0, 0.6);
+}
+#jpWalkthrough .overlay-hole > div {
+  box-shadow: inset 0 0 10px 10px rgba(0, 0, 0, 0.6);
+}
+#jpWalkthrough #jpwTooltip {
+  overflow: visible;
+   padding: 10px;
+   background: none;
+   text-align: center;
+
+	line-height: 30px;
+	background-color: rgba(0, 0, 0, 0.6)  !important; 
+	border: 4px solid #fff;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	-webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+	-moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+#jpWalkthrough #jpwTooltip .guide-top{width:140px; height:78px; position: absolute;left:110px;top:-73px; background:url("images/guide1.png") ;}
+#jpWalkthrough #jpwTooltip .guide-right{width:118px; height:125px; position: absolute;right:-87px;top:-10px; background:url("images/guide2.png") ;}
+#jpWalkthrough #jpwTooltip .guide-bottom{width:140px; height:78px; position: absolute; z-index:5555;left:30px;top:-73px; background:url("images/guide1.png") ;}
+#jpWalkthrough #jpwTooltip .guide-left{width:118px; height:125px; position: absolute;left:-87px;top:-10px; background:url("images/guide3.png") ;}
+
+
+#jpWalkthrough #jpwTooltip #tooltipWrapper {
+  overflow: visible;
+}
+#jpWalkthrough #jpwTooltip #bottom-scratch {
+  background: url("images/scratch-border.png") no-repeat left top;
+  width: 358px;
+  height: 42px;
+  display: block;
+  top: 25px;
+  clear: both;
+}
+#jpWalkthrough #jpwTooltip .draggable-area {
+  display: block;
+  width: 44px;
+  height: 40px;
+  position: absolute;
+  top: -35px;
+  right: -30px;
+  background: url("images/drag.png") no-repeat;
+  z-index: 10000;
+}
+#jpWalkthrough #jpwTooltip .top {
+  background: url("images/arrow-bottom.png") no-repeat scroll 0 0 ;
+  bottom: -86px;
+  height: 86px;
+  left: 130px;
+  position: absolute;
+  width: 75px;
+  display: block;
+  z-index: 1000;
+}
+#jpWalkthrough #jpwTooltip .right {
+  background: url("images/arrow-left.png") no-repeat scroll 0 0 ;
+  height: 56px;
+  left: -105px;
+  position: absolute;
+  top: 35px;
+  width: 105px;
+  display: block;
+  z-index: 1000;
+}
+#jpWalkthrough #jpwTooltip .bottom {
+  background: url("images/arrow-top.png") no-repeat scroll 0 0 ;
+  height: 86px;
+  left: 330px;
+  position: absolute;
+  top: -86px;
+  width: 75px;
+  display: block;
+  z-index: 1000;
+}
+#jpWalkthrough #jpwTooltip .left {
+  background: url("images/arrow-right.png") no-repeat scroll 0 0 transparent;
+  height: 56px;
+  position: absolute;
+  right: -105px;
+  top: 35px;
+  width: 105px;
+  display: block;
+  z-index: 1000;
+}
+#jpWalkthrough #jpwTooltip #tooltipInner {
+  font-family: 'xjlFont','Microsoft yahei';
+  color: #fff;
+  text-align: center;
+  font-size: 18px; line-height:26px;
+}
+#jpWalkthrough #jpwTooltip #tooltipInner a {
+  font-size: 20px;
+}
+#jpWalkthrough #jpwTooltip #tooltipInner .tooltipTitle {
+  font-size: 32px;
+}
+#jpWalkthrough .killOverlay {
+  background-image: none !important;
+  background-color: none !important;
+}
+#jpwClose {
+  position: fixed;
+  top: 65px;
+  right: 25px;
+  z-index: 1000000;
+  color: #ffffff;
+  text-align: center;
+  display: block;
+}
+#jpwClose:hover {
+  color: #7eff00;
+}
+#jpwClose:before {
+  content: '';
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 44px;
+  height: 40px;
+  background: url("images/close.png") no-repeat;
+  position: absolute;
+  top: -45px;
+  left: 36px;
+}
+#jpwNext,
+#jpwFinish {
+   margin-left:30px ;
+}
+#jpwPrevious {
+  margin-left:0px ;
+}
+@font-face {
+  font-family: 'xjlFont';
+  src: url('font/xjlFont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+ 

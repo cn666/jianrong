@@ -1,0 +1,117 @@
+{
+  "mpType": "4",
+  "columns2": [
+    {
+      "field": "avgStrength011",
+      "title": "原始浓度"
+    },
+    {
+      "field": "standardValue011",
+      "title": "排放标准"
+    },
+    {
+      "field": "avgStrength060",
+      "title": "原始浓度"
+    },
+    {
+      "field": "standardValue060",
+      "title": "排放标准"
+    },
+    {
+      "field": "avgStrength101",
+      "title": "原始浓度"
+    },
+    {
+      "field": "standardValue101",
+      "title": "排放标准"
+    }
+  ],
+  "columns1": [
+    {
+      "field": "folw",
+      "title": "废水监控点排放量(吨)",
+      "colspan": 0,
+      "rowspan": 2
+    },
+    {
+      "field": "",
+      "title": "化学需氧量(COD)(毫克\/升)",
+      "colspan": 2,
+      "rowspan": 0
+    },
+    {
+      "field": "",
+      "title": "氨氮(毫克\/升)",
+      "colspan": 2,
+      "rowspan": 0
+    },
+    {
+      "field": "",
+      "title": "总磷(毫克\/升)",
+      "colspan": 2,
+      "rowspan": 0
+    }
+  ],
+  "rows": [
+    {
+      "avgStrength101": "0.0823",
+      "standardValue060": "5",
+      "folw": "631.8967",
+      "standardValue101": "0.5",
+      "avgStrength060": "0.9432",
+      "standardValue011": "50",
+      "avgStrength011": "10.0345",
+      "monitorTime": "2018-10-10 00:00:00"
+    },
+    {
+      "avgStrength101": "0.078",
+      "standardValue060": "5",
+      "folw": "711.6177",
+      "standardValue101": "0.5",
+      "avgStrength060": "0.9422",
+      "standardValue011": "50",
+      "avgStrength011": "11.037",
+      "monitorTime": "2018-10-10 01:00:00"
+    },
+    {
+      "avgStrength101": "0.078",
+      "standardValue060": "5",
+      "folw": "681.7725",
+      "standardValue101": "0.5",
+      "avgStrength060": "0.9504",
+      "standardValue011": "50",
+      "avgStrength011": "10.7031",
+      "monitorTime": "2018-10-10 02:00:00"
+    },
+    {
+      "avgStrength101": "0.078",
+      "standardValue060": "5",
+      "folw": "694.8422",
+      "standardValue101": "0.5",
+      "avgStrength060": "0.9516",
+      "standardValue011": "50",
+      "avgStrength011": "9.6061",
+      "monitorTime": "2018-10-10 03:00:00"
+    },
+    {
+      "avgStrength101": "0.0769",
+      "standardValue060": "5",
+      "folw": "625.9568",
+      "standardValue101": "0.5",
+      "avgStrength060": "0.9433",
+      "standardValue011": "50",
+      "avgStrength011": "10.0644",
+      "monitorTime": "2018-10-10 04:00:00"
+    },
+    {
+      "avgStrength101": "0.074",
+      "standardValue060": "5",
+      "folw": "691.6466",
+      "standardValue101": "0.5",
+      "avgStrength060": "0.942",
+      "standardValue011": "50",
+      "avgStrength011": "11.429",
+      "monitorTime": "2018-10-10 05:00:00"
+    }
+  ]
+}

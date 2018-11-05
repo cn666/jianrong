@@ -1,0 +1,20 @@
+/*--begin--*/
+.ui-datebox{width:193px;}
+.ui-datetimebox{width:193px;}
+.datebox-calendar-inner{width:230px;}/*日历下拉内部宽度*/
+.datePanel{width:230px;border:1px solid #c3c3c3; background-color:#fff; -moz-border-radius: 4px 4px 4px 4px;-webkit-border-radius: 4px 4px 4px 4px;border-radius: 4px 4px 4px 4px;
+    -moz-box-shadow: 0 3px 5px 0 #ccc;-webkit-box-shadow: 0 3px 5px 0 #ccc;box-shadow: 0 3px 5px 0 #ccc;}/*下拉日历宽度*/
+.messager-body {padding:0px;}
+/*--end--*/
+
+/*--begin--*/
+.tree-folder{width:0px;}/*去掉树的图标*/
+.tree-node{padding-left:10px}
+.tree-node-selected{background:none ;color:#139fe8;font-weight:bold}
+.tree-node-hover{background:none ;color:#139fe8; font-weight:bold}
+/*--end--*/
+
+/*.textbox-text.input[type='text'] {border: 0;}*/
+
+/*---IE9下window-panel-title宽度-100%*/
+.window .panel-title{width:auto !important}
